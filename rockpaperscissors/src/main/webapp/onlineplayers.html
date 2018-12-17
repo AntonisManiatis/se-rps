@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online players</title>
+        <link rel="stylesheet" type="text/css" href="./resources/style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="onlineplayers">
+        	<h1>Currently online players:</h1>
+        	<script>
+	        	$(document).ready(function() {
+	        	    $.ajax({
+	        	        url: "http://localhost:8080/rockpaperscissors/api/players/online"
+	        	    }).then(function(data) {
+	        	       $('.id').append(data.id);
+	        	       $('.name').append(data.date);
+	        	    });
+	        	});
+        	</script>
+        	<div>
+            	<p class="id">The ID is </p>
+            	<p class="name">The content is </p>
+       		</div>
+        </div>
+    </body>
+</html>
