@@ -29,7 +29,7 @@ public class MySQLAccountRepository implements AccountRepository
 		return null;
 	}
 	
-	public Account getAccountByUsername(String username)
+	public Account findAccount(Credentials credentials)
 	{
 		try (Connection connection = dataSource.getConnection())
 		{

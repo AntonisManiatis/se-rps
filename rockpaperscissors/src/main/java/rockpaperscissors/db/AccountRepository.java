@@ -6,5 +6,5 @@ public interface AccountRepository
 {
 	Collection<Account> getAll();
 	
-	Account getAccountByUsername(String username);
+	Account findAccount(Credentials credentials);
 }

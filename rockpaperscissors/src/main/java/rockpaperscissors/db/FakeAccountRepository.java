@@ -18,8 +18,8 @@ public class FakeAccountRepository implements AccountRepository
 		return accounts;
 	}
 	
-	public Account getAccountByUsername(String username)
+	public Account findAccount(Credentials credentials)
 	{
-		return new Account(3, username);
+		return new Account(3, credentials.getEmail());
 	}
 }
