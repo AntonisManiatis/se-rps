@@ -2,6 +2,8 @@ package rockpaperscissors.db;
 
 import java.util.Collection;
 
+import rockpaperscissors.model.Player;
+
 /**
  * 
  * @author AnthonyManiatis

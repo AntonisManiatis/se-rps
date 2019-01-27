@@ -7,9 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import rockpaperscissors.db.Account;
 import rockpaperscissors.db.AccountRepository;
-import rockpaperscissors.db.Credentials;
+import rockpaperscissors.db.PlayerRepository;
+import rockpaperscissors.model.Account;
+import rockpaperscissors.model.Credentials;
 
 /**
  * 
@@ -23,10 +24,13 @@ public class LoginServlet extends HttpServlet
 	private static final long serialVersionUID = 1L;
 	
 	private final AccountRepository accountRepository;
+	private final PlayerRepository playerRepository;
 	
-	public LoginServlet(AccountRepository accountRepository)
+	public LoginServlet(AccountRepository accountRepository, 
+			PlayerRepository playerRepository)
 	{
 		this.accountRepository = accountRepository;
+		this.playerRepository = playerRepository;
 	}
 	
 	@Override
@@ -38,7 +42,11 @@ public class LoginServlet extends HttpServlet
         Account account = accountRepository.findAccount(credentials);
         if (account != null)
         {
+        	// Add the user to the online players
+        	// playerRepository.addOnlinePlayer(playerId);
+        	
         	// Redirect to the main page.
+        	resp.sendRedirect("/rockpaperscissors/onlineplayers.html");
         }
         else
         {

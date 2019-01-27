@@ -11,8 +11,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import rockpaperscissors.db.Player;
 import rockpaperscissors.db.PlayerRepository;
+import rockpaperscissors.model.Player;
 
 @Path("/players")
 public class ViewOnlinePlayers

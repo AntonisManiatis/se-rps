@@ -6,6 +6,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import rockpaperscissors.db.FakeAccountRepository;
+import rockpaperscissors.db.InMemoryPlayerRepository;
 
 @WebListener
 public class LoginServletContextListener implements ServletContextListener
@@ -14,7 +15,8 @@ public class LoginServletContextListener implements ServletContextListener
     public void contextInitialized(ServletContextEvent sce)
     {
         ServletContext context = sce.getServletContext();
-        context.addServlet("loginServlet", new LoginServlet(new FakeAccountRepository())).addMapping("/rockpaperscissors/login");
+        context.addServlet("loginServlet", new LoginServlet(new FakeAccountRepository(),
+        		new InMemoryPlayerRepository())).addMapping("/rockpaperscissors/login");
     }
 
     @Override

@@ -6,6 +6,9 @@ import java.util.Collection;
 
 import javax.sql.DataSource;
 
+import rockpaperscissors.model.Account;
+import rockpaperscissors.model.Credentials;
+
 public class MySQLAccountRepository implements AccountRepository
 {
 	private final DataSource dataSource;

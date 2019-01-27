@@ -1,4 +1,4 @@
-package rockpaperscissors.db;
+package rockpaperscissors.model;
 
 /**
  * 
