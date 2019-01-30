@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="./resources/style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+       	<h1>Profile of: </h1>
+       	<script>
+	    	$(document).ready(function() {
+	        	$.ajax({
+	        		url: "http://localhost:8080/rockpaperscissors/api/players/online"
+	        	}).then(function(data) {	        	    	
+	        	    $.each(data, function(index) {
+		 	       		$(".onlineplayers").append("<div class='name'>" + data[index].name + "</div>");
+	        	    })        
+	        	});
+	        });
+        </script>
+        <div class="profile">
+        </div>
+    </body>
+</html>

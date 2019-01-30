@@ -14,11 +14,15 @@
 	        	        url: "http://localhost:8080/rockpaperscissors/api/players/online"
 	        	    }).then(function(data) {	        	    	
 	        	    	$.each(data, function(index) {
-		 	        	    $(".onlineplayers").append("<div class='id'>Id: " + data[index].id + " </div> <div class='name'>Name: " + data[index].name + " </div>");
+		 	        	    $(".onlineplayers").append("<div class='name'><a href='/rockpaperscissors/profile/" + data[index].name + "'>" + data[index].name + "</a></div>");
 	        	    	})        
 	        	    });
 	        	});
         	</script>
+        </div>
+        <div>
+        	<h1>Or play with a random opponent.</h1>
+        	<a href="rockpaperscissors/play">Play!</a>
         </div>
     </body>
 </html>
