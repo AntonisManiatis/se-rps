@@ -14,7 +14,7 @@
 	        	        url: "http://localhost:8080/rockpaperscissors/api/players/online"
 	        	    }).then(function(data) {	        	    	
 	        	    	$.each(data, function(index) {
-		 	        	    $(".onlineplayers").append("<div class='name'><a href='/rockpaperscissors/profile/" + data[index].name + "'>" + data[index].name + "</a></div>");
+		 	        	    $(".onlineplayers").append("<div class='name'><a href='/rockpaperscissors/profile?name=" + data[index].name + "'>" + data[index].name + "</a></div>");
 	        	    	})        
 	        	    });
 	        	});

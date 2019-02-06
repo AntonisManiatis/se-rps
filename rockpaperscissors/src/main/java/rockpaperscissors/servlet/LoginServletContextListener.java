@@ -11,15 +11,15 @@ import rockpaperscissors.db.InMemoryPlayerRepository;
 @WebListener
 public class LoginServletContextListener implements ServletContextListener
 {
-    @Override
     public void contextInitialized(ServletContextEvent sce)
     {
         ServletContext context = sce.getServletContext();
         context.addServlet("loginServlet", new LoginServlet(new FakeAccountRepository(),
         		new InMemoryPlayerRepository())).addMapping("/rockpaperscissors/login");
+        
+        context.addServlet("profileServlet", new ProfileServlet()).addMapping("/rockpaperscissors/profile");
     }
 
-    @Override
     public void contextDestroyed(ServletContextEvent sce)
     {
     	
